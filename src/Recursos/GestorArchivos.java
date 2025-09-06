@@ -9,7 +9,7 @@ public class GestorArchivos
     //LIBRO 
     //añade un libro a libros.txt
     public static void guardarLibro(Libro libro){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("libros.txt", true))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("data/libros.txt", true))){
             bw.write(libro.getIsbn() + "," + 
                     libro.getTitulo() + "," + 
                     libro.getAutor() + "," + 
@@ -26,7 +26,7 @@ public class GestorArchivos
     //carga todos los libros en memoria
     public static ArrayList<Libro> leerLibros(){
         ArrayList<Libro> libros = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("libros.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader("data/libros.txt"))){
             String linea;
             while((linea = br.readLine()) != null){
                 String[] datos = linea.split(",");
@@ -52,7 +52,7 @@ public class GestorArchivos
     //USUARIOS
     //añade un usuario a usuarios.txt
     public static void guardarUsuario(Usuario usuario){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("usuarios.txt", true))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("data/usuarios.txt", true))){
             bw.write(usuario.getDni() + "," +
                     usuario.getNombre() + "," +
                     usuario.getTelefono());
@@ -65,7 +65,7 @@ public class GestorArchivos
     //carga todos los usuarios
     public static ArrayList<Usuario> leerUsuarios() {
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("usuarios.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader("data/usuarios.txt"))){
             String linea;
             while((linea = br.readLine()) != null){
                 String[] datos = linea.split(",");
@@ -87,7 +87,7 @@ public class GestorArchivos
     //PRESTAMOS
     //añade un préstamo (guardando usuario y libro asociados)
     public static void guardarPrestamo(Prestamo prestamo) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("prestamos.txt", true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/prestamos.txt", true))) {
             bw.write(prestamo.getUsuario().getDni() + "," +
                      prestamo.getUsuario().getNombre() + "," +
                      prestamo.getUsuario().getTelefono() + "," +
@@ -103,7 +103,7 @@ public class GestorArchivos
     //reconstruye préstamos desde el archivo
     public static ArrayList<Prestamo> leerPrestamos(ArrayList<Usuario> usuarios, ArrayList<Libro> libros){
         ArrayList<Prestamo> prestamos = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("prestamos.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader("data/prestamos.txt"))){
             String linea;
             while((linea = br.readLine()) != null){
                 String[] datos = linea.split(",");
