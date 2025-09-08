@@ -37,4 +37,8 @@ public class Ordenacion {
             System.out.println(l);
         }
      }
+    
+    //IMPLLEMENTAR EL METODO DE ORDENACION EXTERNA SORT
  }
+
+

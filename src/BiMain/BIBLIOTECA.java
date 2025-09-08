@@ -103,6 +103,7 @@ public class BIBLIOTECA {
      System.out.println("\n----ORDENACION DE LIBROS----");
       System.out.println("=> 1. Ordenar por Título (Burbuja)");
         System.out.println("=> 2. Ordenar por Año (Inserción)");
+        System.out.println("=> 3. Ordenar por editorial (sort)");
         System.out.print("Seleccione una opción: ");
         int opcion = input.nextInt();
         input.nextLine();
