@@ -3,11 +3,36 @@ package BiMain;
 import Recursos.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import Utilidades.SeleccionCarpeta;
 public class BIBLIOTECA {
  private static Scanner input = new Scanner(System.in);
  
  ////METODOS/////
+ public void mostrarMenu() {
+    int opcion;
+    do {
+        System.out.println("\n--- MENÚ BIBLIOTECA ---");
+        System.out.println("=> 1. Registrar Libro");
+        System.out.println("=> 2. Registrar Usuario");
+        System.out.println("=> 3. Registrar Préstamo");
+        System.out.println("=> 4. Mostrar Préstamos");
+        System.out.println("=> 5. Ordenación de Libros");
+        System.out.println("=> 0. Salir");
+        System.out.print("Seleccione una opción: ");
+        opcion = input.nextInt();
+        input.nextLine();
+
+        switch (opcion) {
+            case 1: registrarLibro(); break;
+            case 2: registrarUsuario(); break;
+            case 3: registrarPrestamo(); break;
+            case 4: mostrarPrestamos(); break;
+            case 5: menuOrdenacion(); break;
+            case 0: System.out.println("Saliendo..."); break;
+            default: System.out.println("Opción no válida");
+        }
+    } while (opcion != 0);
+}
  private static void registrarLibro(){
      System.out.print("ISBN: ");
      String isbn = input.nextLine();
@@ -123,35 +148,12 @@ public class BIBLIOTECA {
  ////////////METODO///////////////
     public static void main(String[] args) 
     {
-        int opcion;
-        do {
-            System.out.println("\n--- MENÚ BIBLIOTECA ---");
-            System.out.println("=> 1. Registrar Libro");
-            System.out.println("=> 2. Registrar Usuario");
-            System.out.println("=> 3. Registrar Préstamo");
-            System.out.println("=> 4. Mostrar Préstamos");
-            System.out.println("=> 5. Ordenación de Libros");
-            System.out.println("=> 0. Salir");
-            System.out.print("Seleccione una opción: ");
-            opcion = input.nextInt();
-           input.nextLine(); // limpiar buffer
+        //SELECCIONAR CARPETA DE DATOS
+        SeleccionCarpeta.elegirCarpeta();
         
-           switch (opcion) {
-                case 1: registrarLibro(); 
-                break;
-                case 2: registrarUsuario(); 
-                break;
-                case 3: registrarPrestamo(); 
-                break;
-                case 4: mostrarPrestamos(); 
-                break;
-                case 5: menuOrdenacion(); 
-                break;
-                case 0: System.out.println("Saliendo..."); 
-                break;
-                default: System.out.println("Opción no válida");
-            }
-                } while (opcion != 0);
+        //INICIAR MENU
+        BIBLIOTECA app = new BIBLIOTECA();
+        app.mostrarMenu();
         }
     }
 

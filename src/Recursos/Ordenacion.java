@@ -1,10 +1,12 @@
 
 package Recursos;
 import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 public class Ordenacion {
 
-//Ordenar por titulo usando burbuja
+//Ordenar por titulo usando burbuja (interno)
     public static void burbujaPorTitulo(ArrayList<Libro> libros){
         for(int i = 0; i < libros.size() - 1; i++){
             for(int j = 0; j < libros.size() - 1; j++){
@@ -21,7 +23,7 @@ public class Ordenacion {
         }
     }
     
-    //ordenar por año usando insercion
+    //ordenar por año usando insercion (interno)
     public static void insercionPorAño(ArrayList<Libro> libros){
         for(int i = 0 ; i< libros.size(); i++){
             Libro actual = libros.get(i);
@@ -38,7 +40,42 @@ public class Ordenacion {
         }
      }
     
-    //IMPLLEMENTAR EL METODO DE ORDENACION EXTERNA SORT
+    //IMPLLEMENTAR EL METODO DE ORDENACION EXTERNA SORT (experno)
+    public static void mergeSortPrestamosPorFecha(String archivo){
+        
+    //Leer prestamos enmemoria
+        List<String> prestamos = new ArrayList<>();
+       try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        while ((linea = br.readLine()) != null){
+            prestamos.add(linea);
+            }
+        }catch (IOException e){
+            System.out.println("Error al leer el archivo : " + e.getMessage());
+        }
+       
+       //ORDENAR POR FECHA dd-mm-aaaa
+       Collections.sort(prestamos, new Comparator<String>(){
+        @Override
+        public int compare(String p1, String p2){
+            String[] d1 = p1.split(",");
+            String[] d2 = p2.split(",");
+            return d1[d1.length - 1].compareTo(d2[d2.length - 1]);
+        }
+        });
+        
+        //GUARDAR ARCHIVO ORDENADO
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/prestamos_ordenados.txt"))) {
+            for (String prestamo : prestamos) {
+            bw.write(prestamo);
+            bw.newLine();
+        }
+            System.out.println("Préstamos ordenados por fecha -> archivo: prestamos_ordenados.txt");
+        } catch (IOException e) {
+        System.out.println("Error en ordenación externa: " + e.getMessage());
+    }
  }
+    }
+
 
 
