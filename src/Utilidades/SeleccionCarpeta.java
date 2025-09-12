@@ -2,9 +2,11 @@
 package Utilidades;
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 
 public class SeleccionCarpeta 
 { private static String rutaCarpeta = "";
+
 
 //ABRIR DIALOGO Y GUARDAR RUTA SELECCIONADA
 public static void elegirCarpeta(){
@@ -24,6 +26,16 @@ public static void elegirCarpeta(){
     }   
     //OBTENER LA RUTA COMPLETA DEL ARCHIVO
     public static String getRutaArchivo(String nombreArchivo){
-        return rutaCarpeta + File.separator + nombreArchivo;
+        File archivo = new File(rutaCarpeta, nombreArchivo);
+        
+        try{
+            if(!archivo.exists()){
+                archivo.createNewFile(); //lo creara vasio si no existe
+                System.out.println("Archivo creado : " + archivo.getAbsolutePath());                
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return archivo.getAbsolutePath();
+        }    
     }
-}

@@ -144,8 +144,7 @@ public class BIBLIOTECA {
                 System.out.println("Opcion no valida");
         }
     }
- 
- ////////////METODO///////////////
+ ///////METODO/////
     public static void main(String[] args) 
     {
         //SELECCIONAR CARPETA DE DATOS
