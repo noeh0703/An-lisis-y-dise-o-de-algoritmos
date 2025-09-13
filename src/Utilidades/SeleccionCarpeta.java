@@ -19,6 +19,9 @@ public static void elegirCarpeta(){
         File carpeta = chooser.getSelectedFile();
         rutaCarpeta = carpeta.getAbsolutePath();
         System.out.println("Carpeta seleccionada : " + rutaCarpeta);
+        
+        //crea automaticamente los archivos nesesarios
+        crearArchivosBase();
     }else {
         System.out.println("No se selecciono carpeta, el programa terminara");
         System.exit(0);
@@ -38,4 +41,19 @@ public static void elegirCarpeta(){
         }
         return archivo.getAbsolutePath();
         }    
+    //CREAR TODOS LOS ARCHIVOS NESESARIOS PARA EL PROGRAMA
+    private static void crearArchivosBase(){
+        String[] archivos = {"libros.txt", "usuarios.txt", "prestamos.txt"};
+        for(String nombre : archivos){
+            File archivo = new File(rutaCarpeta, nombre);
+            try{
+                if(!archivo.exists()){
+                    archivo.createNewFile();
+                    System.out.println("Archivo creado : " + archivo.getAbsolutePath());
+                }
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+          }
+        }
     }
