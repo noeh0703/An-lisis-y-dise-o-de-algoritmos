@@ -13,5 +13,13 @@ public class Busqueda {
         return null;//no lo encontro
     }
     // BUSQUEDA HASH (memori interna)
-    
+    public static Usuario busquedaHash(ArrayList<Usuario> usuarios, String dniBuscado){
+        //Cargar usuarios en un HashMap (clave = DNI, valor = usuario)
+        HashMap<String, Usuario> tabla = new HashMap<>();
+        for(Usuario u : usuarios){
+            tabla.put(u.getDni(), u);
+        }
+        //retornar el usuario directamente si es que existe
+        return tabla.get(dniBuscado);
+    }
 }
