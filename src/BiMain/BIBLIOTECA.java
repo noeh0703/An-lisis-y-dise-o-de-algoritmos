@@ -144,6 +144,12 @@ public class BIBLIOTECA {
                 System.out.println("Opcion no valida");
         }
     }
+ private static void menuBusqueda(){
+     System.out.println("-------------BUSQUEDAS----------");
+     System.out.println("=> 1. Buscar libro por titulo (secuencial");
+     System.out.println("=> 2. Buscar usuario por DNI (Hash)");
+ }
+ 
  ///////METODO/////
     public static void main(String[] args) 
     {
