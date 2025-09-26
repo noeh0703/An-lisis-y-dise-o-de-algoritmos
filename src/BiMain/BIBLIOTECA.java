@@ -160,7 +160,12 @@ public class BIBLIOTECA {
              System.out.print("Ingrese el titulo del libro: ");
              String titulo = input.nextLine();
              Libro libroEncotrado = Busqueda.busquedaSecuencial(libros, titulo);
-             
+             break;
+         case 2: 
+             ArrayList<Usuario> usuarios = GestorArchivos.leerUsuarios();
+             System.out.print("Ingrese el DNI: ");
+             String dni = input.nextLine();
+             Usuario dniEncontrado = B
      }
  }
  
