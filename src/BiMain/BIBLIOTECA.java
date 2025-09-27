@@ -108,6 +108,7 @@ public class BIBLIOTECA {
     Prestamo prestamo = new Prestamo(usuario, libro, fecha);
     GestorArchivos.guardarPrestamo(prestamo);
     System.out.println("Prestamo restrado correctamente");
+    
     }
  
  private static void mostrarPrestamos(){
@@ -165,7 +166,14 @@ public class BIBLIOTECA {
              ArrayList<Usuario> usuarios = GestorArchivos.leerUsuarios();
              System.out.print("Ingrese el DNI: ");
              String dni = input.nextLine();
-             Usuario dniEncontrado = B
+             Usuario usuarioEncontrado = Busqueda.busquedaHash(usuarios, dni);
+             if(usuarioEncontrado != null){
+             System.out.println("Se encontro usuario");
+         } else {
+                 System.out.println("No se encontro el usuario");
+             } break;
+         default:
+             System.out.println("Opcion no valida");
      }
  }
  
