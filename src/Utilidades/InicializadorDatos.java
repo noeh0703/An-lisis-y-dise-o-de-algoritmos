@@ -4,7 +4,7 @@ import java.io.*;
 
 public class InicializadorDatos 
 {
-    public static void inicializarArchivos(String rutaCarpeta){
+    public static void inicializarArchivos(String rutaCarpeta){ //datos predeterminados
         crearArchivoConDatos(rutaCarpeta, "usuario.txt",  "12345678,Juan Perez,987654321\n" +
                 "87654321,Ana Torres,912345678\n");
         crearArchivoConDatos(rutaCarpeta, "libros.txt",
