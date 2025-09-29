@@ -2,15 +2,20 @@
 package Recursos;
 import java.io.*;
 import java.util.ArrayList;
-import Utilidades.SeleccionCarpeta;
 
 public class GestorArchivos 
-{
+{   //asegurar la existencia d ela carpet dat
+    private static void crearCarpetaData(){
+     File carpeta = new File("data");
+     if(!carpeta.exists()){
+         carpeta.mkdir();
+     }
+    }    
+    
    //LIBRO 
     //añade un libro a libros.txt
     public static void guardarLibro(Libro libro){
-    try (BufferedWriter bw = new BufferedWriter(
-            new FileWriter(SeleccionCarpeta.getRutaArchivo("libros.txt"), true))) {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/libros.txt", true))) {
         bw.write(libro.getIsbn() + "," + 
                  libro.getTitulo() + "," + 
                  libro.getAutor() + "," + 
@@ -27,8 +32,7 @@ public class GestorArchivos
     //carga todos los libros en memoria
     public static ArrayList<Libro> leerLibros(){
         ArrayList<Libro> libros = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(
-         new FileReader(SeleccionCarpeta.getRutaArchivo("libros.txt")))){
+        try (BufferedReader br = new BufferedReader(new FileReader("libros.txt"))){
             String linea;
             while((linea = br.readLine()) != null){
                 String[] datos = linea.split(",");
