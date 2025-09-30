@@ -3,7 +3,7 @@ package BiMain;
 import Recursos.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Utilidades.SeleccionCarpeta;
+
 public class BIBLIOTECA {
  private static Scanner input = new Scanner(System.in);
  
@@ -181,8 +181,6 @@ public class BIBLIOTECA {
  ///////METODO/////
     public static void main(String[] args) 
     {
-        //SELECCIONAR CARPETA DE DATOS
-        SeleccionCarpeta.elegirCarpeta();
         
         //INICIAR MENU
         BIBLIOTECA app = new BIBLIOTECA();
