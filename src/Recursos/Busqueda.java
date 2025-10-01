@@ -6,7 +6,7 @@ public class Busqueda {
     //BUSQUEDA SECUENCIAL (memoria) interna
     public static Libro busquedaSecuencial(ArrayList<Libro> libros, String tituloBuscado){
         for(Libro libro : libros){
-            if(libro.getTitulo().equalsIgnoreCase(tituloBuscado)){
+            if(libro.getTitulo().equalsIgnoreCase(tituloBuscado.trim())){
                 return libro; //lo encontro
             }
         }

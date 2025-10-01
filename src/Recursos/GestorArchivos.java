@@ -32,7 +32,7 @@ public class GestorArchivos
     //carga todos los libros en memoria
     public static ArrayList<Libro> leerLibros(){
         ArrayList<Libro> libros = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("libros.txt"))){
+        try (BufferedReader br = new BufferedReader(new FileReader("data/libros.txt"))){
             String linea;
             while((linea = br.readLine()) != null){
                 String[] datos = linea.split(",");

@@ -144,11 +144,20 @@ public class BIBLIOTECA {
             case 2: 
                 Ordenacion.insercionPorAño(libros);
                 break;
+            case 3:
+                Ordenacion.mergeSortPrestamosPorFecha("data/prestamos.txt");               
+                break;
             default: 
                 System.out.println("Opcion no valida");
         }
     }
  private static void menuBusqueda(){
+      ArrayList<Libro> libros = GestorArchivos.leerLibros();
+    if(libros.isEmpty()){
+        System.out.println("No hay libros registrados.");
+        return;
+    }
+     
      System.out.println("-------------BUSQUEDAS----------");
      System.out.println("=> 1. Buscar libro por titulo (secuencial");
      System.out.println("=> 2. Buscar usuario por DNI (Hash)");
@@ -158,7 +167,6 @@ public class BIBLIOTECA {
      
      switch(opcion){
          case 1: 
-             ArrayList<Libro> libros = GestorArchivos.leerLibros();
              System.out.print("Ingrese el titulo del libro: ");
              String titulo = input.nextLine();
              Libro libroEncotrado = Busqueda.busquedaSecuencial(libros, titulo);
