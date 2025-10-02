@@ -108,7 +108,7 @@ public class GestorArchivos
         }
     }
     
-    //reconstruye préstamos desde el archivo
+    //Reconstruye préstamos desde el archivo
     public static ArrayList<Prestamo> leerPrestamos(ArrayList<Usuario> usuarios, ArrayList<Libro> libros){
         ArrayList<Prestamo> prestamos = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(

@@ -78,6 +78,7 @@ public class BIBLIOTECA {
  System.out.print("DNI del usuario: ");
  String dni = input.nextLine();
  Usuario usuario = null;
+ 
     for(Usuario u : usuarios){
         if(u.getDni().equals(dni)){
             usuario = u;
@@ -110,6 +111,7 @@ public class BIBLIOTECA {
     System.out.println("Prestamo restrado correctamente");
     
     }
+ 
  
  private static void mostrarPrestamos(){
      ArrayList<Usuario> usuarios = GestorArchivos.leerUsuarios();
@@ -151,6 +153,7 @@ public class BIBLIOTECA {
                 System.out.println("Opcion no valida");
         }
     }
+ 
  private static void menuBusqueda(){
       ArrayList<Libro> libros = GestorArchivos.leerLibros();
     if(libros.isEmpty()){
@@ -189,7 +192,6 @@ public class BIBLIOTECA {
  ///////METODO/////
     public static void main(String[] args) 
     {
-        
         //INICIAR MENU
         BIBLIOTECA app = new BIBLIOTECA();
         app.mostrarMenu();
