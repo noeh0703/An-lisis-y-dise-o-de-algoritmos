@@ -173,6 +173,11 @@ public class BIBLIOTECA {
              System.out.print("Ingrese el titulo del libro: ");
              String titulo = input.nextLine();
              Libro libroEncotrado = Busqueda.busquedaSecuencial(libros, titulo);
+             if (libroEncontrado != null) {
+            System.out.println("Libro encontrado: " + libroEncontrado);
+            } else {
+            System.out.println("No se encontró el libro con ese título.");
+                }
              break;
          case 2: 
              ArrayList<Usuario> usuarios = GestorArchivos.leerUsuarios();

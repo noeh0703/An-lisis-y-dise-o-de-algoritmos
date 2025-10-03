@@ -5,7 +5,7 @@ ISBN004,Libro 4,Carlos Díaz,Delta,Física,4,1993
 ISBN005,Libro 5,Sofía Gómez,Omega,Literatura,5,1994
 ISBN006,Libro 6,Ana Torres,Alfa,Programación,1,1995
 ISBN007,Libro 7,Luis Pérez,Beta,Matemáticas,2,1996
-ISBN008,Libro 8,María López,Gamma,Historia,3,1997
+ISBN008,Libro 8,Autor Demo,Editorial X,Categoria Y,1,2020
 ISBN009,Libro 9,Carlos Díaz,Delta,Física,4,1998
 ISBN010,Libro 10,Sofía Gómez,Omega,Literatura,5,1999
 ISBN011,Libro 11,Ana Torres,Alfa,Programación,1,2000
