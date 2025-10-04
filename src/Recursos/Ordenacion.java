@@ -53,6 +53,10 @@ public class Ordenacion {
         }catch (IOException e){
             System.out.println("Error al leer el archivo : " + e.getMessage());
         }
+       if(prestamos.isEmpty()){
+           System.out.println("No hay prestamos registrados en el archivo");
+           return;
+       }
        
        //ORDENAR POR FECHA dd-mm-aaaa
        Collections.sort(prestamos, new Comparator<String>(){
@@ -65,12 +69,18 @@ public class Ordenacion {
         });
         
         //GUARDAR ARCHIVO ORDENADO
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/prestamos_ordenados.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/prestamos_ordenados.txt"))) {           
             for (String prestamo : prestamos) {
             bw.write(prestamo);
             bw.newLine();
         }
             System.out.println("Préstamos ordenados por fecha -> archivo: prestamos_ordenados.txt");
+            
+            //Ademas mostrar en consola
+            System.out.println("\n---Prestamos por fecha-----");
+            for(String prestamo :prestamos){
+                System.out.print("\n" + prestamo);
+            }
         } catch (IOException e) {
         System.out.println("Error en ordenación externa: " + e.getMessage());
     }

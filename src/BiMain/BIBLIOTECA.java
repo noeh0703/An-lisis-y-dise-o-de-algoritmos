@@ -147,7 +147,7 @@ public class BIBLIOTECA {
                 Ordenacion.insercionPorAño(libros);
                 break;
             case 3:
-                Ordenacion.mergeSortPrestamosPorFecha("data/prestamos.txt");               
+                Ordenacion.mergeSortPrestamosPorFecha("data/libros.txt");               
                 break;
             default: 
                 System.out.println("Opcion no valida");
@@ -172,7 +172,7 @@ public class BIBLIOTECA {
          case 1: 
              System.out.print("Ingrese el titulo del libro: ");
              String titulo = input.nextLine();
-             Libro libroEncotrado = Busqueda.busquedaSecuencial(libros, titulo);
+             Libro libroEncontrado = Busqueda.busquedaSecuencial(libros, titulo);
              if (libroEncontrado != null) {
             System.out.println("Libro encontrado: " + libroEncontrado);
             } else {
