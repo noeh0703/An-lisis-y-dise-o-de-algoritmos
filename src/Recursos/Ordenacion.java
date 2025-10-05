@@ -79,6 +79,7 @@ public class Ordenacion {
             //Ademas mostrar en consola
             System.out.println("\n---Prestamos por fecha-----");
             for(String prestamo :prestamos){
+                //N- Para dar formato
                 System.out.print("\n" + prestamo);
             }
         } catch (IOException e) {
