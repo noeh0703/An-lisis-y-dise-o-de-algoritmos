@@ -8,6 +8,7 @@ public class BIBLIOTECA {
  private static Scanner input = new Scanner(System.in);
  
  ////METODOS/////
+ //menu
  public void mostrarMenu() {
     int opcion;
     do {
@@ -146,7 +147,7 @@ public class BIBLIOTECA {
             case 2: 
                 Ordenacion.insercionPorAño(libros);
                 break;
-            case 3:
+            case 3://metodo distinto formato debido al tipo utilizado
                 Ordenacion.mergeSortPrestamosPorFecha("data/libros.txt");               
                 break;
             default: 
@@ -159,8 +160,7 @@ public class BIBLIOTECA {
     if(libros.isEmpty()){
         System.out.println("No hay libros registrados.");
         return;
-    }
-     
+    }    
      System.out.println("-------------BUSQUEDAS----------");
      System.out.println("=> 1. Buscar libro por titulo (secuencial");
      System.out.println("=> 2. Buscar usuario por DNI (Hash)");

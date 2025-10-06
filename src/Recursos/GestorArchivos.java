@@ -12,8 +12,7 @@ public class GestorArchivos
      }
     }    
     
-   //LIBRO 
-    //añade un libro a libros.txt
+   //LIBRO añade un libro a libros.txt
     public static void guardarLibro(Libro libro){
     try (BufferedWriter bw = new BufferedWriter(new FileWriter("data/libros.txt", true))) {
         bw.write(libro.getIsbn() + "," + 
