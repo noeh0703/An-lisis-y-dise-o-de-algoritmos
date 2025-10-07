@@ -26,4 +26,6 @@ public class Busqueda {
     //retornar el usuario directamente si es que existe
         return tabla.get(dniBuscado);
     }
+        //BUSQUEDA EXTERNA
+        
 }
