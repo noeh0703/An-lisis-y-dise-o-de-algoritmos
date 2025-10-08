@@ -2,7 +2,8 @@
 package Recursos;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.*;
+import java.io.*;
 
 public class Busqueda {
     //BUSQUEDA SECUENCIAL (memoria) interna
@@ -26,6 +27,21 @@ public class Busqueda {
     //retornar el usuario directamente si es que existe
         return tabla.get(dniBuscado);
     }
-        //BUSQUEDA EXTERNA
+    
+        // ⚙️ BÚSQUEDA SECUENCIAL EXTERNA (lee directamente desde libros.txt)
+    public static String busquedaSecuencialExterna(String archivo, String tituloBuscado) {
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split(",");
+                if (datos.length >= 2 && datos[1].trim().equalsIgnoreCase(tituloBuscado.trim())) {
+                    return linea; // libro encontrado
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("️ Error al leer el archivo: " + e.getMessage());
+        }
+        return null; // no encontrado
+    }
         
 }
