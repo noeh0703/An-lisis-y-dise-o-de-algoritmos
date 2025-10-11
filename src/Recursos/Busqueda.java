@@ -57,12 +57,20 @@ public class Busqueda {
             return null;
         }
         
-        
-        
-        
-        
-        
-        
+        int inicio = 0, fin = lineas.size()-1;
+        while(inicio <= fin){
+            int medio = (inicio + fin)/2;
+            String[] datos = lineas.get(medio).split(",");
+            if(datos.length < 2)continue;
+            
+            int compara = datos[1].trim().compareToIgnoreCase(tituloBuscado.trim());
+            if(compara == 0)
+                return lineas.get(medio);
+            if(compara < 0)
+                inicio = medio +1;
+            else fin = medio -1;
+        }
+        return null;
        }
     }
 
