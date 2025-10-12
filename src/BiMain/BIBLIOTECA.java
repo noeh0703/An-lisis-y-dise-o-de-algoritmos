@@ -164,6 +164,8 @@ public class BIBLIOTECA {
      System.out.println("-------------BUSQUEDAS----------");
      System.out.println("=> 1. Buscar libro por titulo (secuencial");
      System.out.println("=> 2. Buscar usuario por DNI (Hash)");
+     System.out.println("=> 3. Buscar libro por título (secuencial externa)");
+     System.out.println("=> 4. Buscar por titulo (binaria externa)");
      System.out.println("Seleccione una opcion : ");
      int opcion = input.nextInt();
      input.nextLine();
@@ -189,6 +191,9 @@ public class BIBLIOTECA {
          } else {
                  System.out.println("No se encontro el usuario");
              } break;
+         case 3:
+             System.out.print("Ingrese titulo(archivo debe estar ordenado)");
+             
          default:
              System.out.println("Opcion no valida");
      }
