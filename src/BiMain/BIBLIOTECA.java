@@ -195,6 +195,11 @@ public class BIBLIOTECA {
              System.out.print("Ingrese titulo : ");
               String titulo2 = input.nextLine();
               String resultado = Busqueda.busquedaSecuencialExterna("data/libros.txt", titulo2);
+              if (resultado != null)
+            System.out.println("Libro encontrado: " + resultado);
+             else
+            System.out.println("No se encontró el libro en archivo.");
+                break;
          case 4:
              System.out.print("Ingrese titulo(archivo debe estar ordenado)");
              
