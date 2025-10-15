@@ -201,8 +201,14 @@ public class BIBLIOTECA {
             System.out.println("No se encontró el libro en archivo.");
                 break;
          case 4:
-             System.out.print("Ingrese titulo(archivo debe estar ordenado)");
-             
+             System.out.print("Ingrese el título (archivo debe estar ordenado): ");
+             String titulo3 = input.nextLine();
+             String resultado2 = Busqueda.busquedaBinariaExterna("data/libros.txt", titulo3);
+             if (resultado2 != null)
+             System.out.println("Libro encontrado: " + resultado2);
+             else
+             System.out.println("No se encontró el libro en archivo ordenado.");
+             break;            
          default:
              System.out.println("Opcion no valida");
      }
