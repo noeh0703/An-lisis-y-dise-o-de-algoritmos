@@ -208,7 +208,8 @@ public class BIBLIOTECA {
              System.out.println("Libro encontrado: " + resultado2);
              else
              System.out.println("No se encontró el libro en archivo ordenado.");
-             break;            
+             break;   
+             
          default:
              System.out.println("Opcion no valida");
      }
