@@ -195,14 +195,14 @@ public class BIBLIOTECA {
              System.out.print("Ingrese titulo : ");
               String titulo2 = input.nextLine();
               String resultado = Busqueda.busquedaSecuencialExterna("data/libros.txt", titulo2);
-              if (resultado != null)
+              if (resultado != null) // misma logica pero con llmados distintos
             System.out.println("Libro encontrado: " + resultado);
              else
             System.out.println("No se encontró el libro en archivo.");
                 break;
          case 4:
              System.out.print("Ingrese el título (archivo debe estar ordenado): ");
-             String titulo3 = input.nextLine();
+             String titulo3 = input.nextLine();//Similar, diferente metodo de busqueda
              String resultado2 = Busqueda.busquedaBinariaExterna("data/libros.txt", titulo3);
              if (resultado2 != null)
              System.out.println("Libro encontrado: " + resultado2);
