@@ -49,15 +49,20 @@ public class Busqueda {
         List<String> lineas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
+            
             while ((linea = br.readLine()) != null) {
                 lineas.add(linea);
             }
+            
         } catch (IOException e) {
+            
             System.out.println("Error al leer el archivo: " + e.getMessage());
             return null;
+            
         }
         
         int inicio = 0, fin = lineas.size()-1;
+        
         while(inicio <= fin){
             int medio = (inicio + fin)/2;
             String[] datos = lineas.get(medio).split(",");
@@ -65,11 +70,14 @@ public class Busqueda {
             
             int compara = datos[1].trim().compareToIgnoreCase(tituloBuscado.trim());
             if(compara == 0)
+            
                 return lineas.get(medio);
             if(compara < 0)
                 inicio = medio +1;
             else fin = medio -1;
+            
         }
+       
         return null;
        }
     }
