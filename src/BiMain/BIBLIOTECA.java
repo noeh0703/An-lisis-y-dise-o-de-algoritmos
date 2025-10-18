@@ -164,8 +164,7 @@ public class BIBLIOTECA {
      System.out.println("-------------BUSQUEDAS----------");
      System.out.println("=> 1. Buscar libro por titulo (secuencial");
      System.out.println("=> 2. Buscar usuario por DNI (Hash)");
-     System.out.println("=> 3. Buscar libro por título (secuencial externa)");
-     System.out.println("=> 4. Buscar por titulo (binaria externa)");
+     System.out.println("=> 3. Buscar libro por título (secuencial externa)");    
      System.out.println("Seleccione una opcion : ");
      int opcion = input.nextInt();
      input.nextLine();
@@ -199,17 +198,7 @@ public class BIBLIOTECA {
             System.out.println("Libro encontrado: " + resultado);
              else
             System.out.println("No se encontró el libro en archivo.");
-                break;
-         case 4:
-             System.out.print("Ingrese el título (archivo debe estar ordenado): ");
-             String titulo3 = input.nextLine();//Similar, diferente metodo de busqueda
-             String resultado2 = Busqueda.busquedaBinariaExterna("data/libros.txt", titulo3);
-             if (resultado2 != null)
-             System.out.println("Libro encontrado: " + resultado2);
-             else
-             System.out.println("No se encontró el libro en archivo ordenado.");
-             break;   
-             
+                break;       
          default:
              System.out.println("Opcion no valida");
      }
