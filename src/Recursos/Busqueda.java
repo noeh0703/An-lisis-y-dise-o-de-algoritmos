@@ -34,14 +34,13 @@ public class Busqueda {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
-                if (datos.length >= 2 && datos[1].trim().equalsIgnoreCase(tituloBuscado.trim())) {
+                if (datos.length >= 2 && datos[1].trim().equalsIgnoreCase(tituloBuscado.trim())){
                     return linea; // libro encontrado
                 }
             }
         } catch (IOException e) {
             System.out.println("️ Error al leer el archivo: " + e.getMessage());
-        }
-        return null; // no encontrado
+        }return null; // no encontrado
     }
      
     // BÚSQUEDA BINARIA EXTERNA (archivo debe estar ORDENADO por título)
@@ -51,12 +50,10 @@ public class Busqueda {
             String linea;            
             while ((linea = br.readLine()) != null) {
                 lineas.add(linea);
-            }            
-        } catch (IOException e) {            
+            }  } catch (IOException e) {            
             System.out.println("Error al leer el archivo: " + e.getMessage());
             return null;            
-        }
-        
+        }        
         int inicio = 0, fin = lineas.size()-1;        
         while(inicio <= fin){
             int medio = (inicio + fin)/2;
@@ -67,11 +64,8 @@ public class Busqueda {
                 return lineas.get(medio);
             if(compara < 0)
                 inicio = medio +1;
-            else fin = medio -1;
-            
-        }
-       
-        return null;
+            else fin = medio -1;            
+        } return null;
        }
     }
 
