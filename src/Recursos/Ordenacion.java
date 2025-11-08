@@ -40,9 +40,8 @@ public class Ordenacion {
         }
      }
     
-    //IMPLLEMENTAR EL METODO DE ORDENACION EXTERNA SORT (experno)
-    public static void mergeSortPrestamosPorFecha(String archivo){
-        
+    //IMPLLEMENTAR EL METODO DE ORDENACION EXTERNA SORT (externo)
+    public static void mergeSortPrestamosPorFecha(String archivo){        
     //Leer prestamos enmemoria
         List<String> prestamos = new ArrayList<>();
        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
@@ -52,8 +51,7 @@ public class Ordenacion {
             }
         }catch (IOException e){
             System.out.println("Error al leer el archivo : " + e.getMessage());
-        }
-       if(prestamos.isEmpty()){
+        }if(prestamos.isEmpty()){
            System.out.println("No hay prestamos registrados en el archivo");
            return;
        }
