@@ -18,5 +18,13 @@ public class DivideYvenseras {
         String pivote = libros.get(fin).getTitulo();
         int i = inicio - 1;
         
+        for(int j = inicio; j < fin ; j++){
+            if(libros.get(j).getTitulo().compareToIgnoreCase(pivote) <= 0){
+                i++;
+                Collections.swap(libros, i , j);
+            }
+        }
+     Collections.swap(libros, i + 1, fin);
+     return i + 1; //posicion final del pivote
     }
 }
