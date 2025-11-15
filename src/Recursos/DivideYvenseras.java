@@ -27,4 +27,12 @@ public class DivideYvenseras {
      Collections.swap(libros, i + 1, fin);
      return i + 1; //posicion final del pivote
     }
+    
+    //mostrar de los resultados ordenados
+    public static void mostrarLibrosOrdenados(ArrayList<Libro> libros){
+        System.out.println("\n--- Libro ordenados(QuickSort - Divide y Venceras)");
+        fo(Libro 1 : libros){
+        System.out.println(1);
+        }
+    }
 }
