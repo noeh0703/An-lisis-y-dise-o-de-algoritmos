@@ -208,8 +208,16 @@ public class BIBLIOTECA {
  
  //sub menu quicksort
  private static void menuQuickSort(){
+     ArrayList<Libro> libros = GestorArchivos.leerLibros();
+     if(libros.isEmpty()){
+         System.out.print("No haylibros registrados");
+         return;
+     }
      
+     DivideYvenseras.quickSortLibros(libros, 0, libros.size() - 1);
+     DivideYvenseras.mostrarLibrosOrdenados(libros);
  }
+ 
  ///////METODO/////
     public static void main(String[] args) 
     {
