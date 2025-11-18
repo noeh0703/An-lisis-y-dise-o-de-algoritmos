@@ -31,7 +31,7 @@ public class DivideYvenseras {
     //mostrar de los resultados ordenados
     public static void mostrarLibrosOrdenados(ArrayList<Libro> libros){
         System.out.println("\n--- Libro ordenados(QuickSort - Divide y Venceras)");
-        for(Libro 1 : libros){
+        for (Libro l : libros){
         System.out.println(1);       
         }
     }
