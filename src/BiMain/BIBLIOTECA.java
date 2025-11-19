@@ -18,8 +18,7 @@ public class BIBLIOTECA {
         System.out.println("=> 3. Registrar Préstamo");
         System.out.println("=> 4. Mostrar Préstamos");
         System.out.println("=> 5. Ordenación de Libros");
-        System.out.println("=> 6. Busquedas");
-        System.out.println("=> 7. QuickSort (Divide y venceras)");
+        System.out.println("=> 6. Busquedas");       
         System.out.println("=> 0. Salir");
         System.out.print("Seleccione una opción: ");
         opcion = input.nextInt();
@@ -31,8 +30,7 @@ public class BIBLIOTECA {
             case 3: registrarPrestamo(); break;
             case 4: mostrarPrestamos(); break;
             case 5: menuOrdenacion(); break;
-            case 6: menuBusqueda(); break;
-            case 7: menuQuickSort(); break;
+            case 6: menuBusqueda(); break;           
             case 0: System.out.println("Saliendo..."); break;
             default: System.out.println("Opción no válida");
         }
@@ -138,6 +136,7 @@ public class BIBLIOTECA {
       System.out.println("=> 1. Ordenar por Título (Burbuja)");
         System.out.println("=> 2. Ordenar por Año (Inserción)");
         System.out.println("=> 3. Ordenar por editorial (sort)");
+        System.out.println("=> 4. Ordenar por titulo (QuickSort");                             
         System.out.print("Seleccione una opción: ");
         int opcion = input.nextInt();
         input.nextLine();
@@ -151,6 +150,10 @@ public class BIBLIOTECA {
                 break;
             case 3://metodo distinto formato debido al tipo utilizado
                 Ordenacion.mergeSortPrestamosPorFecha("data/libros.txt");               
+                break;
+            case 4: 
+                DivideYvenseras.quickSortLibros(libros, 0, libros.size() - 1);
+                DivideYvenseras.mostrarLibrosOrdenados(libros);
                 break;
             default: 
                 System.out.println("Opcion no valida");
@@ -206,17 +209,6 @@ public class BIBLIOTECA {
      }
  }
  
- //sub menu quicksort
- private static void menuQuickSort(){
-     ArrayList<Libro> libros = GestorArchivos.leerLibros();
-     if(libros.isEmpty()){
-         System.out.print("No haylibros registrados");
-         return;
-     }
-     
-     DivideYvenseras.quickSortLibros(libros, 0, libros.size() - 1);
-     DivideYvenseras.mostrarLibrosOrdenados(libros);
- }
  
  ///////METODO/////
     public static void main(String[] args) 
