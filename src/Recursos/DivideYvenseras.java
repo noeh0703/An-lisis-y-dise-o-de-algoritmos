@@ -3,7 +3,7 @@ package Recursos;
 import java.util.ArrayList;
 import java.util.Collections;
 public class DivideYvenseras {
-    //QUICK-SORT ordenr por titulo
+    //QUICK-SORT ordenr por titulo- semestre 3
     public static void quickSortLibros(ArrayList<Libro> libros, int inicio, int fin){
         if(inicio < fin){
             int indicePivote = particion(libros, inicio, fin);
@@ -22,12 +22,10 @@ public class DivideYvenseras {
             if(libros.get(j).getTitulo().compareToIgnoreCase(pivote) <= 0){
                 i++;
                 Collections.swap(libros, i , j);
-            }
-        }
+            }        }
      Collections.swap(libros, i + 1, fin);
      return i + 1; //posicion final del pivote
-    }
-    
+    }   
     //mostrar de los resultados ordenados
     public static void mostrarLibrosOrdenados(ArrayList<Libro> libros){
         System.out.println("\n--- Libro ordenados(QuickSort - Divide y Venceras)");
@@ -35,4 +33,6 @@ public class DivideYvenseras {
         System.out.println(l);       
         }
     }
+    
+    //Ordenacion por 
 }
