@@ -34,5 +34,9 @@ public class DivideYvenseras {
         }
     }
     
-    //Ordenacion por 
+    //Ordenacion por Quicksort
+    public static void quickSortPorTitulo(ArrayList<Libro> libros){
+        quickSortLibros(libros, 0, libros.size()-1);
+        
+    }
 }
