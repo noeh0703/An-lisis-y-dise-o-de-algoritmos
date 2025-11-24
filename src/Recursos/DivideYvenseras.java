@@ -37,6 +37,9 @@ public class DivideYvenseras {
     //Ordenacion por Quicksort
     public static void quickSortPorTitulo(ArrayList<Libro> libros){
         quickSortLibros(libros, 0, libros.size()-1);
-        
+        System.out.println("\n----Libros ordenados por titulo quickSort----");
+        for(Libro l : libros){
+            System.out.println(l);
+        }
     }
 }
