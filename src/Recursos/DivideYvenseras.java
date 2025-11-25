@@ -42,4 +42,8 @@ public class DivideYvenseras {
             System.out.println(l);
         }
     }
+    //Implementacion de quickSort
+    private static void quickSort(ArrayList<Libro> libros, int inicio, int fin) {
+        
+    }
 }
