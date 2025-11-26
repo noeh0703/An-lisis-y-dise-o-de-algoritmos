@@ -44,6 +44,9 @@ public class DivideYvenseras {
     }
     //Implementacion de quickSort
     private static void quickSort(ArrayList<Libro> libros, int inicio, int fin) {
-        
+        if(inicio < fin){
+            int indiceParticion = particion(libros, inicio, fin);
+            //crar 
+        }
     }
 }
