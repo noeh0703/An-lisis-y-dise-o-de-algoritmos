@@ -49,7 +49,7 @@ public class DivideYvenseras {
             //Ordenar lado izquierdo
             quickSort(libros, inicio, indiceParticion -1);
             //ordenar lado derecho
-            
-        }
+            quickSort(libros, indiceParticion + 1, );
+        }q
     }
 }
