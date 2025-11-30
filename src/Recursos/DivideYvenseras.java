@@ -53,4 +53,9 @@ public class DivideYvenseras {
         }
     }
     //particion usando el ultimo elemento cmo pivote
+    
+    private static int particion(ArrayList<Libro> libros, int inicio, int fin){
+        Libro pivote = libros.get(fin);
+        int i = inicio - 1;
+    }
 }
