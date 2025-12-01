@@ -57,5 +57,12 @@ public class DivideYvenseras {
     private static int particion(ArrayList<Libro> libros, int inicio, int fin){
         Libro pivote = libros.get(fin);
         int i = inicio - 1;
+        
+         for (int j = inicio; j < fin; j++) {
+            if (libros.get(j).getTitulo().compareToIgnoreCase(pivote.getTitulo()) <= 0) {
+                i++;
+                intercambiar(libros, i, j);
+            }
+        }
     }
 }
