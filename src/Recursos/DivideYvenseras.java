@@ -64,5 +64,9 @@ public class DivideYvenseras {
                 intercambiar(libros, i, j);
             }
         }
+         intercambiar(libros, i + 1, fin);
+         return i + 1;
     }
+    //funcion para intercambiar libros en lista
+    
 }
