@@ -68,5 +68,9 @@ public class DivideYvenseras {
          return i + 1;
     }
     //funcion para intercambiar libros en lista
-    
+    private static void intercambiar(ArrayList<Libro> libros, int i, int j){
+        Libro temp = libros.get(i);
+        libros.set(i, libros.get(j));
+        libros.set(j, temp);
+    }
 }
