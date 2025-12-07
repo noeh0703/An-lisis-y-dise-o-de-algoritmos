@@ -10,4 +10,8 @@ public class GrafoBibliotcas {
         adyacencia = new HashMap<>();
     }
     
+    //asegurar que el nodo exista en el grafo
+    public void agregarNodo(String nodo) {
+        adyacencia.putIfAbsent(nodo, new ArrayList<>());
+    }
 }
