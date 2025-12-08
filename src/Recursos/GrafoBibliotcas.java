@@ -14,4 +14,12 @@ public class GrafoBibliotcas {
     public void agregarNodo(String nodo) {
         adyacencia.putIfAbsent(nodo, new ArrayList<>());
     }
+    // Agregar relación entre usuario y libro
+    public void agregarArista(String nodo1, String nodo2) {
+        agregarNodo(nodo1);
+        agregarNodo(nodo2);
+
+        adyacencia.get(nodo1).add(nodo2);
+        adyacencia.get(nodo2).add(nodo1); // grafo no dirigido
+    }
 }
